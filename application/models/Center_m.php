@@ -84,6 +84,7 @@ class Center_m extends CI_Model {
         $sql='SELECT * FROM cen_staff where isactive=1 ';
         $sql=$sql.' and (accountno = ? or email = ?) ';
         $query=$this->rdb->query($sql,array($accountno,$accountno));
+		log_message('error','The SQL from Center_M::'.$sql);
         return $query->row_array();
     }
     public function get_user($accountno){
